@@ -1,0 +1,21 @@
+
+
+<h1>Add new book</h1>
+<% form_for :book, :url => books_path, :method => 'put' ,:html => { :multipart => true } do |f| -%>
+<!--<#%= start_form_tag :action => 'create' %>-->
+<p><label for="book_title">Title</label>:
+<%= text_field 'book', 'title' %></p>
+<p><label for="book_price">Price</label>:
+<%= text_field 'book', 'price' %></p>
+<p><label for="book_subject">Subject</label>:
+<%= collection_select(:book,:subject_id,@subjects,:id,:name) %></p>
+<!--<#%= collection_select(:book,:subject_id,@subjects,:id,:name) %></p>-->
+<p><label for="book_description">Description</label><br/>
+<%= text_area 'book', 'description' %></p>
+<%= submit_tag "Create" %>
+<% end %>
+<%= link_to 'Back', {:controller => :subjects, :action => 'list'} %>
+
+
+
+

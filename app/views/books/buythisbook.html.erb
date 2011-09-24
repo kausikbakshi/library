@@ -1,0 +1,23 @@
+<h1><%= @book.title %></h1>
+<p><strong>Price: </strong> Rs.<%= @book.price %><br />
+<strong>Subject :</strong> <%= @book.subject.name %><br />
+<strong>Created Date:</strong> <%= @book.created_at %><br />
+</p>
+<p><%= @book.description %></p>
+
+
+
+
+
+<p><label for="book_quantity">Quantity</label>:
+<%= text_field 'book', 'title', :size => 1 %></p>
+
+<hr /><br></br>
+<br></br>
+<div><p><%= link_to 'ADD TO CART'%></p></div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+<%= link_to 'Cancel Shopping', {:action => 'list'} %>
